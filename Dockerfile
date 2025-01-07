@@ -10,11 +10,6 @@ RUN python -m venv /opt/venv
 # 激活虚拟环境（通过设置PATH）
 ENV PATH="/opt/venv/bin:$PATH"
 
-# 安装MySQL开发库和其他构建工具
-RUN apt-get update && \
-    apt-get install -y default-libmysqlclient-dev build-essential && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
-
 # 更新pip, setuptools和wheel
 RUN pip install --upgrade pip setuptools wheel
 
